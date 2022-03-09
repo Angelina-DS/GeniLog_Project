@@ -9,5 +9,5 @@ That is why our motivation here is to develop the most robust and general proced
 
 A Wikipedia page can be analysed using two different methods : <br>
 - By picking up the Wikitext code corresponding
-- By exploiting the HTML rendering of the Wikipedia page
+- By exploiting the HTML rendering of the Wikipedia page <br>
 In our case, we'll be choosing the second point. 

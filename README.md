@@ -12,3 +12,13 @@ A Wikipedia page can be analysed using two different methods : <br>
 - By exploiting the HTML rendering of the Wikipedia page 
 
 In our case, we'll be choosing the second point. 
+
+## The Python Extractor
+
+The first basic extractor we constructed was in Python. It is mainly using packages such as *requests*, *BeautifulSoup4* and *pandas*. All of these dependencies can be installed by using the following command line from the root : <br>
+``` $ pip3 install -r requirements.txt ``` <br>
+
+Then one just has to execute the Python file such as : <br>
+``` $ python3 ./Extractor_to_csv ``` <br>
+
+Note that this extractor as only tested on one url which is ```https://en.wikipedia.org/wiki/Comparison_of_digital_SLRs````and may doesn't work for other.

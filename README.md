@@ -22,4 +22,4 @@ Then one just has to execute the Python file such as : <br>
 ``` $ python3 ./Extractor_to_csv ``` <br>
 
 After that one should have a new file named *Comparison_of_digital_SLRs table 1* in the CSV format, containing the whole content of the Wikipedia page's table. <br>
-<u> Note </u> that this extractor as only tested on one url (https://en.wikipedia.org/wiki/Comparison_of_digital_SLRs) and may doesn't work for other. 
+Note that this extractor as only tested on one url (https://en.wikipedia.org/wiki/Comparison_of_digital_SLRs) and may doesn't work for other. 

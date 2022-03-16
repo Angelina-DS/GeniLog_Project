@@ -18,9 +18,10 @@ def wikiTable_to_csv(url = str):
     tables = pd.read_html(url, header=0) #reads html tables into a list of dataframe objects
     #print(tables)
 
+    #If you want to test the code on linkBis, change the following "1"s by a "0"
     if not tables[1].empty:
-        dataframeName = tableName + " table " + str(1)
-        tables[1].to_csv(dataframeName, sep=',') #or sep = '/t' ?
+        dataframeName = tableName + " table.csv"
+        tables[1].to_csv(dataframeName, sep=',') 
 
 result = wikiTable_to_csv(link)
 print(result)

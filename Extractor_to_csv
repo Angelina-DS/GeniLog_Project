@@ -6,10 +6,10 @@ link = 'https://en.wikipedia.org/wiki/Comparison_of_digital_SLRs'
 linkBis = 'https://en.wikipedia.org/wiki/List_of_most_visited_websites' #Work but with 0 instead of 1
 response = requests.get(link) #request which gets the url's encoded content
 soup = BeautifulSoup(response.text,'html.parser') #reponse.text : url's decoded content
-#print(soup.prettify()) 
+#print(soup.prettify()) # To see the html code of the Wikipedia page
 
-#To save the html code of the Wikipedia page
-#fichier = open("temp.txt", "a")
+#To create a text file temp in which one can save the html code of the Wikipedia page
+#fichier = open("temp.txt", "w")
 #fichier.write(soup.prettify())
 #fichier.close()
 

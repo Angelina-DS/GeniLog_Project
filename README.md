@@ -22,5 +22,5 @@ Ensure yourself to be using the url stored in the variable *link* and not *linkB
 Then one just has to execute the Python file such as : <br>
 ``` $ python3 ./Extractor_to_csv ``` <br>
 
-After that one should have a new file named *Comparison_of_digital_SLRs table 1* in the CSV format, containing the whole content of the Wikipedia page's table. <br>
+After that one should have a new file named *Comparison_of_digital_SLRs table.csv* in the CSV format, containing the whole content of the Wikipedia page's table. If you want to test the code on the second url, *linkBis*, make sure you replace the "1"s of lines 22 and 24 of the code by "0"s. <br>
 Note that this extractor as only tested on two urls and may doesn't work for other. <br>

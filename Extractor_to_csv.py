@@ -68,5 +68,3 @@ def wikiTable_to_csv(url = str):
     #print(tables[1])
 
 result = wikiTable_to_csv(link)
-
-#<a rel="nofollow" class="external text" href="https://www.optyczne.pl/895-Panasonic_Lumix_DMC-GH1-specyfikacja_aparatu.html">[1]</a>

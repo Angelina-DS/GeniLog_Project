@@ -62,11 +62,10 @@ def wikiTable_to_csv(url = str):
         dataframeName = tableName + " table.csv"
 
         dico = getAllRefs(link)
-        #table = replaceRefByUrl(tables, dico)
         tables[1]['Reference'] = tables[1]['Reference'].apply(lambda row : replaceRefByUrl(row, dico))
 
         tables[1].to_csv(dataframeName, sep=',') 
-    print(tables[1])
+    #print(tables[1])
 
 result = wikiTable_to_csv(link)
 

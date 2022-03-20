@@ -19,23 +19,15 @@ def getAllRefs(url = str) :
     #print(allrefs)
 
     for ref in allrefs: 
-        string = str(ref)
-        element = "["
-        if element in string :
-            id = string[string.index(element) + 1]
+        string = str(ref)[-10:] # 'l">[1]</a>' for example
+        condition = "["
+        if condition in string :
+            id = int(string[string.index("[") +1 :string.index("]")])
         if ref['rel'] == ['nofollow'] : # We are only interested in https pages and not wiki articles
             if id not in httpsrefs :
                 httpsrefs[id] = [ref.get('href')]
             else :
                 httpsrefs[id].append(ref.get('href'))
-        #try :
-            #temp = re.search("(?P<url>https?://[^\s]+)", str(ref)).group("url")
-            #httpsrefs[allrefs.index(ref)] = temp
-        #except AttributeError :
-            #pass
-    #for key in list(httpsrefs) : #we deleted urls that are not in the table
-        #if key > 129 :
-            #httpsrefs.pop(key)
     pprint.pprint(httpsrefs)
     return(len(httpsrefs)) #length must be 130
 
@@ -54,4 +46,6 @@ def wikiTable_to_csv(url = str):
 intermediate = getAllRefs(link)
 print(intermediate)
 #result = wikiTable_to_csv(link)
-#print(result)
+# #print(result)
+
+#<a rel="nofollow" class="external text" href="https://www.optyczne.pl/895-Panasonic_Lumix_DMC-GH1-specyfikacja_aparatu.html">[1]</a>

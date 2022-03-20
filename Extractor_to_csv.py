@@ -59,7 +59,7 @@ def wikiTable_to_csv(url = str):
 
     #If you want to test the code on linkBis, change the following "1"s by "0"s
     if not tables[1].empty:
-        dataframeName = tableName + " table.csv"
+        dataframeName = tableName + " table_urlversion.csv"
 
         dico = getAllRefs(link)
         tables[1]['Reference'] = tables[1]['Reference'].apply(lambda row : replaceRefByUrl(row, dico))

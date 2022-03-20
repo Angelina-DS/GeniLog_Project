@@ -18,9 +18,8 @@ In our case, we'll be choosing the second point.
 The first basic extractor we constructed was in Python. It is mainly using packages such as *requests*, *BeautifulSoup4* and *pandas*. All of these dependencies can be installed by using the following command line from the root : <br>
 ``` $ pip3 install -r requirements.txt ``` <br>
 
-Ensure yourself to be using the url stored in the variable *link* and not *linkBis*, which was a another url chosen to test the extractor on another wikipedia page. <br>
 Then one just has to execute the Python file such as : <br>
 ``` $ python3 ./Extractor_to_csv ``` <br>
 
-After that one should have a new file named *Comparison_of_digital_SLRs table.csv* in the CSV format, containing the whole content of the Wikipedia page's table. If you want to test the code on the second url, *linkBis*, make sure you replace the "1"s of lines 22 and 24 of the code by "0"s. <br>
-Note that this extractor as only tested on two urls and may doesn't work for other. <br>
+After that one should have a new file named *Comparison_of_digital_SLRs table_urlversion.csv* in the CSV format, containing the whole content of the Wikipedia page's table, with the references towards other pages replaced by their urls. *Comparison_of_digital_SLRs table_refversion.csv* consists in a precedent version of the file in which the references were not replaced by their urls yet. <br>
+Note that this extractor as only tested on one url and may doesn't work for other. <br>

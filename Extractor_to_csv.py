@@ -28,9 +28,29 @@ def getAllRefs(url = str) :
                 httpsrefs[id] = [ref.get('href')]
             else :
                 httpsrefs[id].append(ref.get('href'))
-    pprint.pprint(httpsrefs)
-    return(len(httpsrefs)) #length must be 130
+    #pprint.pprint(httpsrefs)
+    #print(len(httpsrefs))
+    return(httpsrefs) #length must be 130
 
+
+def replaceRefByUrl(element, dico) : 
+    if type(element) == str: #Don't take the nan's values
+        r = []
+        inter = ""
+        t = False
+        for s in element:
+            if s == "]":
+                t = False
+                r.append(dico[int(inter)][0])
+                inter = ""
+            if t:
+                inter += s
+            if s == "[":
+                t = True
+        return r
+    else :
+        return element
+              
 
 def wikiTable_to_csv(url = str):
     tableName  = url.split("/")[-1]
@@ -41,11 +61,13 @@ def wikiTable_to_csv(url = str):
     if not tables[1].empty:
         dataframeName = tableName + " table.csv"
 
-        tables[1].to_csv(dataframeName, sep=',') 
+        dico = getAllRefs(link)
+        #table = replaceRefByUrl(tables, dico)
+        tables[1]['Reference'] = tables[1]['Reference'].apply(lambda row : replaceRefByUrl(row, dico))
 
-intermediate = getAllRefs(link)
-print(intermediate)
-#result = wikiTable_to_csv(link)
-# #print(result)
+        tables[1].to_csv(dataframeName, sep=',') 
+    print(tables[1])
+
+result = wikiTable_to_csv(link)
 
 #<a rel="nofollow" class="external text" href="https://www.optyczne.pl/895-Panasonic_Lumix_DMC-GH1-specyfikacja_aparatu.html">[1]</a>
